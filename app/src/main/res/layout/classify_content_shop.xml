@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <com.youth.banner.Banner
+            android:id="@+id/classify_content_shop_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+        </com.youth.banner.Banner>
+        <TextView
+            android:id="@+id/classify_content_shop_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="25sp"
+            />
+        <TextView
+            android:id="@+id/classify_content_shop_sunheard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+        <TextView
+            android:id="@+id/classify_content_shop_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff33"
+            android:layout_margin="5dp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#ccc"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:padding="10dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#ffcc00"
+            android:text="加入购物车" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#ff33"
+            android:text="立即购买" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

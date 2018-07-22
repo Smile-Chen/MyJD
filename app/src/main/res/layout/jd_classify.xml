@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+    <include layout="@layout/title"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="#ccc"
+        >
+        <ListView
+            android:id="@+id/classify_listview"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:divider="#ccc"
+            android:dividerHeight="1dp"
+            android:background="#fff"
+            ></ListView>
+        <FrameLayout
+            android:id="@+id/classify_frame"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1"
+            >
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

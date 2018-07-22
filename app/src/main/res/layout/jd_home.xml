@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#ccc">
+    <include layout="@layout/title"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+                  android:orientation="vertical"
+    >
+
+            <com.youth.banner.Banner
+                android:id="@+id/home_banner"
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+            </com.youth.banner.Banner>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/home_recycler_type"
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:background="#fff"
+                >
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:layout_marginTop="1dp"
+                android:padding="3dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#cc0"
+                    android:text="京东快报"
+                    android:layout_gravity="center"
+                    />
+                   <com.sunfusheng.marqueeview.MarqueeView
+                       android:id="@+id/home_marquee"
+                       android:layout_width="match_parent"
+                       android:layout_height="30dp"
+                       android:layout_marginLeft="10dp"
+                       android:layout_gravity="center"
+                       app:mvTextColor="@color/colorAccent"
+                       >
+                   </com.sunfusheng.marqueeview.MarqueeView>
+
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/home_recycler_seckill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                >
+            </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="为您推荐"
+                android:textSize="25sp"
+                android:padding="2dp"
+                android:gravity="center"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/home_recycler_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

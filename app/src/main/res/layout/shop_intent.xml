@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ccff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="30sp"
+        android:textColor="#00f"
+        android:text="我的订单"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ff3366"/>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              >
+            <Button
+                android:id="@+id/shop_intent_unpaid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="待支付"
+                />
+              <Button
+                  android:id="@+id/shop_intent_paid"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="已支付"
+                  />
+              <Button
+                  android:id="@+id/shop_intent_canc"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="已取消"
+                  />
+          </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shop_intent_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ccc"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

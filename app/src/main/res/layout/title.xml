@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="#F10215"
+    >
+        <ImageView
+            android:id="@+id/title_sao"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/a_s"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            />
+        <EditText
+            android:id="@+id/title_search"
+            android:background="#fff"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:hint="京东超市满199减100"
+            android:drawableRight="@drawable/search_icon2"
+            android:layout_margin="20dp"
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/a9x"
+            android:layout_margin="15dp"
+            />
+
+</LinearLayout>

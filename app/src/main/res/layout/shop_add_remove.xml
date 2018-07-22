@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    <Button
+        android:id="@+id/shop_child_numjian"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="-"
+        />
+
+    <Button
+        android:id="@+id/shop_child_num"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:text="1"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/shop_child_numjia"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="+"
+        />
+
+
+</LinearLayout>
