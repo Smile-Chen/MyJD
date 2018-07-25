@@ -14,6 +14,7 @@ import co.example.hp.jdchen.mvp.my.model.bean.DefaultAddressBean;
 import co.example.hp.jdchen.mvp.my.model.bean.GetDefaultaddressBean;
 import co.example.hp.jdchen.mvp.my.model.bean.HearFileBean;
 import co.example.hp.jdchen.mvp.my.model.bean.LoginBean;
+import co.example.hp.jdchen.mvp.my.model.bean.MBean;
 import co.example.hp.jdchen.mvp.my.model.bean.MyAddressBean;
 import co.example.hp.jdchen.mvp.my.model.bean.NewAddressBean;
 import co.example.hp.jdchen.mvp.my.model.bean.RegBean;
@@ -44,10 +45,12 @@ public interface API {
     @GET(ConsantAPI.reg_url)
     Observable<RegBean>regs(@Query("mobile") String mobile, @Query("password")String password);
        //获取头像
-    @Multipart
+       @Multipart
        @POST(ConsantAPI.headfile_url)
        Observable<HearFileBean>hearfile(@Query("uid") int uid, @Part MultipartBody.Part file);
-
+    //获得用户信息
+    @GET(ConsantAPI.my_url)
+    Observable<MBean>mybeans(@Query("uid")int uid);
 
        //搜索框
        @GET(ConsantAPI.search_url)

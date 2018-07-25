@@ -5,6 +5,7 @@ import android.util.Log;
 import co.example.hp.jdchen.base.BasePresenter;
 import co.example.hp.jdchen.mvp.my.model.bean.HearFileBean;
 import co.example.hp.jdchen.mvp.my.model.MyModel;
+import co.example.hp.jdchen.mvp.my.model.bean.MBean;
 import co.example.hp.jdchen.mvp.my.model.bean.MyAddressBean;
 import co.example.hp.jdchen.mvp.my.view.iview.MyCenterIView;
 import io.reactivex.Observer;
@@ -45,5 +46,37 @@ public class MyCenterPresenter extends BasePresenter<MyCenterIView>{
                     }
                 });
     }
+    //g获取用户信息
+    public void mys(int uid) {
+        myModel.mys(uid)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<MBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-}
+                    }
+
+                    @Override
+                    public void onNext(MBean mBean) {
+                        if (view != null) {
+                            view.onMSuccess(mBean);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (view != null) {
+                            view.onMError(e.toString());
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+
+    }

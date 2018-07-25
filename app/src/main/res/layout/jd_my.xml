@@ -91,6 +91,7 @@
             android:layout_weight="1"
             android:background="@drawable/tui"
             />
+
         <ImageView
             android:id="@+id/my_intent"
             android:layout_width="0dp"
@@ -99,8 +100,6 @@
             android:background="@drawable/ding"
             />
     </LinearLayout>
-
-
 
 
 </LinearLayout>

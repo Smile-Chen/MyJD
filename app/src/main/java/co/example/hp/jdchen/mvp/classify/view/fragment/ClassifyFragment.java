@@ -6,15 +6,23 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.xys.libzxing.zxing.activity.CaptureActivity;
 
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import co.example.hp.jdchen.R;
 import co.example.hp.jdchen.base.BaseActivity;
 import co.example.hp.jdchen.mvp.classify.model.bean.ClassifyBean;
@@ -32,6 +40,9 @@ public class ClassifyFragment extends BaseActivity<ClassifyPresenter> implements
 
     @BindView(R.id.title_search)
     EditText titleSearch;
+    @BindView(R.id.title_sao)
+    ImageView titleSao;
+
     private ListView classifyListView;
     private FrameLayout classifyFrame;
     private ClassifyRightFragment classifyRightFragment1;
@@ -58,6 +69,8 @@ public class ClassifyFragment extends BaseActivity<ClassifyPresenter> implements
         classifyListView = view.findViewById(R.id.classify_listview);
         classifyFrame = view.findViewById(R.id.classify_frame);
         titleSearch = view.findViewById(R.id.title_search);
+        titleSao = view.findViewById(R.id.title_sao);
+
         classifyRightFragment1 = new ClassifyRightFragment();
 
         //fragment管理者
@@ -75,10 +88,19 @@ public class ClassifyFragment extends BaseActivity<ClassifyPresenter> implements
         titleSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),HomeSearchActivity.class);
+                Intent intent = new Intent(getActivity(), HomeSearchActivity.class);
                 startActivity(intent);
             }
         });
+        titleSao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"欢迎进入扫一扫",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), CaptureActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

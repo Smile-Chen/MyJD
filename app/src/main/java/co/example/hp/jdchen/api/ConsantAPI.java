@@ -13,6 +13,8 @@ public class ConsantAPI {
     public static final String reg_url="user/reg";
       //获取头像
     public static final String headfile_url="file/upload";
+    //获得用户信息   
+    public static final String my_url="user/getUserInfo";
 
     //搜索框
     public static final String search_url="product/searchProducts";

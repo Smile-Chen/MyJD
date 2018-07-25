@@ -6,6 +6,7 @@ import co.example.hp.jdchen.mvp.my.model.bean.DefaultAddressBean;
 import co.example.hp.jdchen.mvp.my.model.bean.GetDefaultaddressBean;
 import co.example.hp.jdchen.mvp.my.model.bean.HearFileBean;
 import co.example.hp.jdchen.mvp.my.model.bean.LoginBean;
+import co.example.hp.jdchen.mvp.my.model.bean.MBean;
 import co.example.hp.jdchen.mvp.my.model.bean.MyAddressBean;
 import co.example.hp.jdchen.mvp.my.model.bean.NewAddressBean;
 import co.example.hp.jdchen.mvp.my.model.bean.RegBean;
@@ -26,6 +27,12 @@ public class MyModel {
     public Observable<RegBean> regbeans(String mobile, String password){
         return RetrofitManager.getRetrofit().create(API.class).regs(mobile, password);
     }
+    //获取用户信息
+    public Observable<MBean> mys(int uid){
+        return RetrofitManager.getRetrofit().create(API.class).mybeans(uid);
+    }
+
+
     //头像
     public Observable<HearFileBean> hearfilebeans(int uid, MultipartBody.Part file){
         return RetrofitManager.getRetrofit().create(API.class).hearfile(uid,file);

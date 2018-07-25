@@ -34,7 +34,7 @@ public class HomeSearchActivity extends Activit<SearchPresenter> implements Sear
     @BindView(R.id.title_search_flow)
     FlowLayout titleSearchFlow;
     @BindView(R.id.title_search_cler)
-    FlowLayout titleSearchCler;
+    Button titleSearchCler;
     private String keywords;
     private int sort;
     private static final String TAG = "HomeSearchActivit";

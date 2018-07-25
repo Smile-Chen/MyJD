@@ -3,6 +3,7 @@ package co.example.hp.jdchen.mvp.my.view.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import co.example.hp.jdchen.R;
 import co.example.hp.jdchen.base.Activit;
 import co.example.hp.jdchen.mvp.my.model.bean.LoginBean;
@@ -78,11 +80,15 @@ public class LoginActivity extends Activit<MyPresenter> implements MyIView {
                 startActivity(intent);
             }
         });
+
+
     }
+
     @Override
     public void onMySuccess(final LoginBean loginBean) {
         Log.d(TAG, "initData: ===" + loginBean.getCode());
         if (loginBean.getCode().equals("0")) {
+
             Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
             mobile = loginMobile.getText().toString();
             password = loginPassword.getText().toString();
@@ -95,12 +101,13 @@ public class LoginActivity extends Activit<MyPresenter> implements MyIView {
             edit.putString("nickname", nickname);
             edit.putString("icon", icon);
             edit.putInt("uid", uid);
-
             edit.putBoolean("flag", true);
             edit.commit();
+            Intent intent = new Intent();
+            setResult(2,intent);
             finish();
-            Log.d(TAG, "onMySuccess: UID=="+ uid);
-            Log.d(TAG, "onMySuccess:昵称=="+ nickname);
+            Log.d(TAG, "onMySuccess: UID==" + uid);
+            Log.d(TAG, "onMySuccess:昵称==" + nickname);
             Toast.makeText(this, loginBean.getData().getMobile().toString() + "欢迎您", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, loginBean.getMsg(), Toast.LENGTH_SHORT).show();
@@ -124,7 +131,8 @@ public class LoginActivity extends Activit<MyPresenter> implements MyIView {
 
     @Override
     public Context context() {
-        return null;
+        return this;
     }
+
 }
 

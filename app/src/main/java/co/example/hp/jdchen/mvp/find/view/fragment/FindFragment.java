@@ -12,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jcodecraeer.xrecyclerview.ProgressStyle;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,8 +33,9 @@ import co.example.hp.jdchen.mvp.find.view.iview.FindIView;
 public class FindFragment extends BaseActivity<FindPresenter>implements FindIView{
 
 
-    private RecyclerView findRecycler;
+    private XRecyclerView findRecycler;
     private MyAdapter myAdapter;
+    private List<FindBean.ResultBean.DataBean> newslist;
 
     @Override
     protected FindPresenter getPresenter() {
@@ -59,15 +63,39 @@ public class FindFragment extends BaseActivity<FindPresenter>implements FindIVie
     }
     @Override
     public void onfindSuccess(FindBean findBean) {
-        List<FindBean.ResultBean.DataBean> newslist = findBean.getResult().getData();
-        MyAdapter myAdapter = new MyAdapter(newslist);
+        newslist = findBean.getResult().getData();
+        final MyAdapter myAdapter = new MyAdapter(newslist);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
           findRecycler.setLayoutManager(linearLayoutManager);
         findRecycler.setAdapter(myAdapter);
+        findRecycler.setRefreshProgressStyle(ProgressStyle.BallZigZag); //设定下拉刷新样式
+        findRecycler.setLoadingMoreProgressStyle(ProgressStyle.BallZigZag);//设定上拉加载样式
+
+
+        findRecycler.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                myAdapter.notifyDataSetChanged();
+               findRecycler.loadMoreComplete();
+            }
+
+            @Override
+            public void onLoadMore() {
+
+                myAdapter.notifyDataSetChanged();
+                findRecycler.refreshComplete();
+            }
+        });
+
+
+
+
+
 
 
     }
+
 
     @Override
     public void onfindError(String error) {

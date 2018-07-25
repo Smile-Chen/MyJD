@@ -5,15 +5,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#f0f0f0">
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="个人中心"
-        android:gravity="center"
         android:background="#ccff"
-        android:layout_marginBottom="5dp"
-        />
+        android:orientation="horizontal"
+        >
+          <Button
+              android:id="@+id/my_center_return"
+              android:layout_width="30dp"
+              android:layout_height="30dp"
+              android:padding="10dp"
+              android:background="@drawable/back"
+              />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="个人中心"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            />
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -105,11 +121,28 @@
             android:text="收货地址"
             />
     </LinearLayout>
+     <TextView
+         android:id="@+id/my_center_startqz"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="#fff"
+         android:textSize="20sp"
+         android:text="生成二维码"
+         />
+
+    <ImageView
+        android:id="@+id/my_center_qz"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        />
+
     <Button
         android:id="@+id/my_center_loginout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="80dp"
+        android:layout_margin="50dp"
         android:background="#ff3300"
         android:text="注销登录"
         />
